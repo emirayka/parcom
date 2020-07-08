@@ -6,6 +6,22 @@ export class ParserErrorTag {
   public readonly kind: 'tag' = 'tag'
 }
 
+export class ParserErrorPair {
+  public readonly kind: 'pair' = 'pair'
+}
+
+export class ParserErrorSeparatedPair {
+  public readonly kind: 'separated-pair' = 'separated-pair'
+}
+
+export class ParserErrorMap {
+  public readonly kind: 'map' = 'map'
+}
+
+export class ParserErrorStab {
+  public readonly kind: 'stab' = 'stab'
+}
+
 export class ParserErrorIncomplete {
   private readonly amount: number
   public readonly kind: 'incomplete' = 'incomplete'
@@ -35,7 +51,11 @@ export class ParserErrorFailure {
 export type ParserError = ParserErrorIncomplete |
   ParserErrorFailure |
   ParserErrorTag |
-  ParserErrorAlt
+  ParserErrorAlt |
+  ParserErrorPair |
+  ParserErrorSeparatedPair |
+  ParserErrorMap |
+  ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
   return error.kind === 'incomplete'

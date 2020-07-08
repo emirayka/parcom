@@ -1,4 +1,4 @@
-import {Parser, ParserErrorTag} from '@/types'
+import {Parser, ParserErrorPair} from '@/types'
 import {tag} from '@/parser/string/complete'
 
 import {pair} from './pair'
@@ -10,11 +10,11 @@ describe('pair', () => {
   const pairABCDEF: Parser<string, [string, string]> = pair(tagABC, tagDEF)
 
   test('if first parser returns error then constructed parser returns error ', () => {
-    expect(pairABCDEF('bcdef')).toEqual(Err(['bcdef', new ParserErrorTag()]))
+    expect(pairABCDEF('bcdef')).toEqual(Err(['bcdef', new ParserErrorPair()]))
   })
 
   test('if second parser returns error then constructed parser returns error ', () => {
-    expect(pairABCDEF('abcef')).toEqual(Err(['abcef', new ParserErrorTag()]))
+    expect(pairABCDEF('abcef')).toEqual(Err(['abcef', new ParserErrorPair()]))
   })
 
   test('if both parsers return ok then constructed parser returns ok ', () => {

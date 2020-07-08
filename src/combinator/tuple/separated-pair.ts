@@ -1,6 +1,6 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {Parser, ParserResult} from '@/types'
+import {Parser, ParserErrorSeparatedPair, ParserResult} from '@/types'
 
 type SeparatedPair = <I,
   O1,
@@ -37,13 +37,16 @@ export const separatedPair: SeparatedPair = <I,
 
           return Ok([rest3, [v1, v3]])
         } else {
-          return Err([input, result3.unwrapErr()[1]])
+          // return Err([input, result3.unwrapErr()[1]])
+          return Err([input, new ParserErrorSeparatedPair()])
         }
       } else {
-        return Err([input, result2.unwrapErr()[1]])
+        // return Err([input, result2.unwrapErr()[1]])
+        return Err([input, new ParserErrorSeparatedPair()])
       }
     } else {
-      return Err([input, result1.unwrapErr()[1]])
+      // return Err([input, result1.unwrapErr()[1]])
+      return Err([input, new ParserErrorSeparatedPair()])
     }
   }
 }

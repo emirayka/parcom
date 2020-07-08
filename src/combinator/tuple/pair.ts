@@ -1,6 +1,6 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {Parser, ParserResult} from '@/types'
+import {Parser, ParserErrorPair, ParserResult} from '@/types'
 
 type Pair = <I,
   O1,
@@ -29,10 +29,12 @@ export const pair: Pair = <I,
 
         return Ok([rest2, [v1, v2]])
       } else {
-        return Err([input, result2.unwrapErr()[1]])
+        // return Err([input, result2.unwrapErr()[1]])
+        return Err([input, new ParserErrorPair()])
       }
     } else {
-      return Err([input, result1.unwrapErr()[1]])
+      // return Err([input, result1.unwrapErr()[1]])
+      return Err([input, new ParserErrorPair()])
     }
   }
 }
