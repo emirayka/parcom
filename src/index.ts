@@ -1,5 +1,3 @@
-const answer = {
-  answer: 42,
-}
-
-export default answer
+export * from './types'
+export * as combinator from './combinator'
+export * as parser from './parser'
