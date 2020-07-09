@@ -110,6 +110,10 @@ export class ParserErrorMany1Count {
   public readonly kind: 'many1-count' = 'many1-count'
 }
 
+export class ParserErrorCount {
+  public readonly kind: 'count' = 'count'
+}
+
 export class ParserErrorSeparatedList {
   public readonly kind: 'separated-list' = 'separated-list'
 }
@@ -145,6 +149,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorManyMN |
   ParserErrorMany0Count |
   ParserErrorMany1Count |
+  ParserErrorCount |
   ParserErrorSeparatedList |
   ParserErrorSeparatedNonemptyList |
   ParserErrorStab
