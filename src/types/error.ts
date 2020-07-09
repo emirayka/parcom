@@ -76,6 +76,10 @@ export class ParserErrorComplete {
   public readonly kind: 'complete' = 'complete'
 }
 
+export class ParserErrorOpt {
+  public readonly kind: 'opt' = 'opt'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -95,6 +99,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorTakeWhile1 |
   ParserErrorTakeWhileMN |
   ParserErrorComplete |
+  ParserErrorOpt |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
