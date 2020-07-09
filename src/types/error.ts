@@ -1,27 +1,3 @@
-export class ParserErrorAlt {
-  public readonly kind: 'alt' = 'alt'
-}
-
-export class ParserErrorTag {
-  public readonly kind: 'tag' = 'tag'
-}
-
-export class ParserErrorPair {
-  public readonly kind: 'pair' = 'pair'
-}
-
-export class ParserErrorSeparatedPair {
-  public readonly kind: 'separated-pair' = 'separated-pair'
-}
-
-export class ParserErrorMap {
-  public readonly kind: 'map' = 'map'
-}
-
-export class ParserErrorStab {
-  public readonly kind: 'stab' = 'stab'
-}
-
 export class ParserErrorIncomplete {
   private readonly amount: number
   public readonly kind: 'incomplete' = 'incomplete'
@@ -48,6 +24,34 @@ export class ParserErrorFailure {
   }
 }
 
+export class ParserErrorAlt {
+  public readonly kind: 'alt' = 'alt'
+}
+
+export class ParserErrorTag {
+  public readonly kind: 'tag' = 'tag'
+}
+
+export class ParserErrorPair {
+  public readonly kind: 'pair' = 'pair'
+}
+
+export class ParserErrorSeparatedPair {
+  public readonly kind: 'separated-pair' = 'separated-pair'
+}
+
+export class ParserErrorMap {
+  public readonly kind: 'map' = 'map'
+}
+
+export class ParserErrorTake {
+  public readonly kind: 'take' = 'take'
+}
+
+export class ParserErrorStab {
+  public readonly kind: 'stab' = 'stab'
+}
+
 export type ParserError = ParserErrorIncomplete |
   ParserErrorFailure |
   ParserErrorTag |
@@ -55,6 +59,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorPair |
   ParserErrorSeparatedPair |
   ParserErrorMap |
+  ParserErrorTake |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
