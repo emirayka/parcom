@@ -29,31 +29,31 @@ describe('streaming', () => {
           })
 
           test('when matched part of input string length is greater than b, returns Ok', () => {
-            expect(tillColon36('swordsman:')).toEqual(Err(['swordsman:', new ParserErrorTakeTillMN()]))
+            expect(tillColon36('swordsman:')).toEqual(Ok(['man:', 'swords']))
           })
 
           test('when called with empty string, returns Incomplete', () => {
-            expect(tillColon36('')).toEqual(Err(['', new ParserErrorIncomplete(1)]))
+            expect(tillColon36('')).toEqual(Err(['', new ParserErrorIncomplete(6)]))
           })
 
           test('when called with string without colon which length is less than a, returns Incomplete', () => {
-            expect(tillColon36('sw')).toEqual(Err(['sw', new ParserErrorIncomplete(1)]))
+            expect(tillColon36('sw')).toEqual(Err(['sw', new ParserErrorIncomplete(4)]))
           })
 
           test('when called with string without colon which length equals to a, returns Incomplete', () => {
-            expect(tillColon36('swo')).toEqual(Err(['swo', new ParserErrorIncomplete(1)]))
+            expect(tillColon36('swo')).toEqual(Err(['swo', new ParserErrorIncomplete(3)]))
           })
 
           test('when called with string without colon which length between a and b, returns Incomplete', () => {
-            expect(tillColon36('swor')).toEqual(Err(['swor', new ParserErrorIncomplete(1)]))
+            expect(tillColon36('swor')).toEqual(Err(['swor', new ParserErrorIncomplete(2)]))
           })
 
-          test('when called with string without colon which length equals to b, returns Incomplete', () => {
-            expect(tillColon36('swords')).toEqual(Err(['swords', new ParserErrorIncomplete(1)]))
+          test('when called with string without colon which length equals to b, returns Ok', () => {
+            expect(tillColon36('swords')).toEqual(Ok(['', 'swords']))
           })
 
-          test('when called with string without colon which length is greater than b, returns Err', () => {
-            expect(tillColon36('swordsman')).toEqual(Err(['swordsman', new ParserErrorTakeTillMN()]))
+          test('when called with string without colon which length is greater than b, returns Ok', () => {
+            expect(tillColon36('swordsman')).toEqual(Ok(['man', 'swords']))
           })
         })
       })

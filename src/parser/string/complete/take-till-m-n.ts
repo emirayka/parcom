@@ -13,14 +13,11 @@ Got takeTillMN(${m}, ${n}).
 
   return (input) => {
     let i = 0
+    const length: number = Math.min(n, input.length)
 
-    while (i < input.length) {
+    while (i < length) {
       if (predicate(input[i])) {
         break
-      }
-
-      if (i > n) {
-        return Err([input, new ParserErrorTakeTillMN()])
       }
 
       i += 1
