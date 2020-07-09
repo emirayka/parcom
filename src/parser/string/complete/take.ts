@@ -1,8 +1,9 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {ParserErrorTake, ParserResult} from '@/types'
+import {Parser, ParserErrorTake} from '@/types'
 
-export const take = (amount: number) => (input: string): ParserResult<string, string> => {
+type Take = (amount: number) => Parser<string, string>
+export const take: Take = (amount) => (input) => {
   if (input.length >= amount) {
     return Ok([input.substr(amount), input.substr(0, amount)])
   }

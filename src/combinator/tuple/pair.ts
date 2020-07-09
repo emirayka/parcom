@@ -17,7 +17,7 @@ export const pair: Pair = <I,
   p1: Parser<I, O1>,
   p2: Parser<I, O2>,
 ) => {
-  return (input: I): ParserResult<I, [O1, O2]> => {
+  return (input: I) => {
     const result1: ParserResult<I, O1>  = p1(input)
 
     if (result1.isOk()) {

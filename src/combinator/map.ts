@@ -17,7 +17,7 @@ export const map: Map = <I,
   mapFn: (value: O1) => O2,
   parser: Parser<I, O1>,
 ) => {
-  return (input: I): ParserResult<I, O2> => {
+  return (input: I) => {
     const result: ParserResult<I, O1> = parser(input)
 
     if (result.isOk()) {

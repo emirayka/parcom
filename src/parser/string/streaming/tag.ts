@@ -1,9 +1,9 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {Parser, ParserErrorIncomplete, ParserErrorTag, ParserResult} from '@/types'
+import {Parser, ParserErrorIncomplete, ParserErrorTag} from '@/types'
 
 type Tag = (tag: string) => Parser<string, string>
-export const tag: Tag = (tag) => (input): ParserResult<string, string> => {
+export const tag: Tag = (tag) => (input) => {
   let i = 0
 
   while (i < tag.length && i < input.length) {

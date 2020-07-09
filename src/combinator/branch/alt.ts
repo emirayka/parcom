@@ -48,7 +48,7 @@ export const alt: Alt = <I,
   p7?: Parser<I, O7>,
   p8?: Parser<I, O8>,
 ) => {
-  return (input: I): ParserResult<I, O1 | O2 | O3 | O4 | O5 | O6 | O7 | O8> => {
+  return (input: I) => {
     let result: ParserResult<I, O1 | O2 | O3 | O4 | O5 | O6 | O7 | O8>  = p1(input)
 
     if (needForward(result)) {
