@@ -48,6 +48,14 @@ export class ParserErrorTake {
   public readonly kind: 'take' = 'take'
 }
 
+export class ParserErrorTakeTill {
+  public readonly kind: 'take-till' = 'take-till'
+}
+
+export class ParserErrorTakeTill1 {
+  public readonly kind: 'take-till1' = 'take-till1'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -60,6 +68,8 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorSeparatedPair |
   ParserErrorMap |
   ParserErrorTake |
+  ParserErrorTakeTill |
+  ParserErrorTakeTill1 |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
