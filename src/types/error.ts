@@ -96,6 +96,14 @@ export class ParserErrorManyMN {
   public readonly kind: 'many-m-n' = 'many-m-n'
 }
 
+export class ParserErrorMany0Count {
+  public readonly kind: 'many0-count' = 'many0-count'
+}
+
+export class ParserErrorMany1Count {
+  public readonly kind: 'many1-count' = 'many1-count'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -120,6 +128,8 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorMany0 |
   ParserErrorMany1 |
   ParserErrorManyMN |
+  ParserErrorMany0Count |
+  ParserErrorMany1Count |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
