@@ -72,6 +72,10 @@ export class ParserErrorTakeWhileMN {
   public readonly kind: 'take-while-m-n' = 'take-while-m-n'
 }
 
+export class ParserErrorComplete {
+  public readonly kind: 'complete' = 'complete'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -90,6 +94,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorTakeWhile |
   ParserErrorTakeWhile1 |
   ParserErrorTakeWhileMN |
+  ParserErrorComplete |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
