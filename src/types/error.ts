@@ -84,6 +84,18 @@ export class ParserErrorPeek {
   public readonly kind: 'peek' = 'peek'
 }
 
+export class ParserErrorMany0 {
+  public readonly kind: 'many0' = 'many0'
+}
+
+export class ParserErrorMany1 {
+  public readonly kind: 'many1' = 'many1'
+}
+
+export class ParserErrorManyMN {
+  public readonly kind: 'many-m-n' = 'many-m-n'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -105,6 +117,9 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorComplete |
   ParserErrorOpt |
   ParserErrorPeek |
+  ParserErrorMany0 |
+  ParserErrorMany1 |
+  ParserErrorManyMN |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
