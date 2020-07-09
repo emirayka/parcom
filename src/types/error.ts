@@ -110,6 +110,10 @@ export class ParserErrorSeparatedList {
   public readonly kind: 'separated-list' = 'separated-list'
 }
 
+export class ParserErrorSeparatedNonemptyList {
+  public readonly kind: 'separated-nonempty-list' = 'separated-nonempty-list'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -137,6 +141,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorMany0Count |
   ParserErrorMany1Count |
   ParserErrorSeparatedList |
+  ParserErrorSeparatedNonemptyList |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
