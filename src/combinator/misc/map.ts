@@ -2,21 +2,8 @@ import {Err, Ok} from '@emirayka/option-result'
 
 import {Parser, ParserErrorMap, ParserResult} from '@/types'
 
-type Map = <I,
-  O1,
-  O2,
-  >(
-  mapFn: (value: O1) => O2,
-  parser: Parser<I, O1>,
-) => Parser<I, O2>
-
-export const map: Map = <I,
-  O1,
-  O2,
-  >(
-  mapFn: (value: O1) => O2,
-  parser: Parser<I, O1>,
-) => {
+type Map = <I, O1, O2>(mapFn: (value: O1) => O2, parser: Parser<I, O1>) => Parser<I, O2>
+export const map: Map = <I, O1, O2>(mapFn: (value: O1) => O2, parser: Parser<I, O1>) => {
   return (input: I) => {
     const result: ParserResult<I, O1> = parser(input)
 
