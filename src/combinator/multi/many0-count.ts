@@ -1,16 +1,6 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {isFailure, isIncomplete, Parser, ParserError, ParserResult} from '@/types'
-
-const needToForward = <I, O>(result: ParserResult<I, O>): boolean => {
-  if (result.isErr()) {
-    const error: ParserError = result.unwrapErr()[1]
-
-    return isIncomplete(error) || isFailure(error)
-  }
-
-  return false
-}
+import {needToForward, Parser, ParserResult} from '@/types'
 
 type Many0Count = <I, O>(parser: Parser<I, O>) => Parser<I, number>
 export const many0Count: Many0Count = <I, O>(parser: Parser<I, O>) => (input: I) => {

@@ -1,16 +1,6 @@
 import {Err, Ok} from '@emirayka/option-result'
 
-import {isFailure, isIncomplete, Parser, ParserError, ParserErrorManyMN, ParserResult} from '@/types'
-
-const needToForward = <I, O>(result: ParserResult<I, O>): boolean => {
-  if (result.isErr()) {
-    const error: ParserError = result.unwrapErr()[1]
-
-    return isIncomplete(error) || isFailure(error)
-  }
-
-  return false
-}
+import {needToForward, Parser, ParserErrorManyMN, ParserResult} from '@/types'
 
 type ManyMN = <I, O>(parser: Parser<I, O>, m: number, n: number) => Parser<I, Array<O>>
 export const manyMN: ManyMN = <I, O>(parser: Parser<I, O>, m: number, n: number) => {

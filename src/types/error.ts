@@ -1,3 +1,5 @@
+import {ParserResult} from '@/types/parser'
+
 export class ParserErrorIncomplete {
   private readonly amount: number
   public readonly kind: 'incomplete' = 'incomplete'
@@ -104,6 +106,10 @@ export class ParserErrorMany1Count {
   public readonly kind: 'many1-count' = 'many1-count'
 }
 
+export class ParserErrorSeparatedList {
+  public readonly kind: 'separated-list' = 'separated-list'
+}
+
 export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
@@ -130,6 +136,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorManyMN |
   ParserErrorMany0Count |
   ParserErrorMany1Count |
+  ParserErrorSeparatedList |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {
@@ -138,4 +145,14 @@ export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete
 
 export const isFailure = (error: ParserError): error is ParserErrorFailure => {
   return error.kind === 'failure'
+}
+
+export const needToForward = <I, O>(result: ParserResult<I, O>): boolean => {
+  if (result.isErr()) {
+    const error: ParserError = result.unwrapErr()[1]
+
+    return isIncomplete(error) || isFailure(error)
+  }
+
+  return false
 }
