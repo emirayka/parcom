@@ -1,2 +1,7 @@
 export * from './tag'
 export * from './take'
+export * from './take-till'
+export * from './take-till1'
+export * from './take-till-m-n'
+export * from './take-while'
+export * from './take-while1'
