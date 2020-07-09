@@ -1,4 +1,4 @@
 export * from './branch'
 export * from './tuple'
-export * from './map'
-export * from './complete'
+export * from './misc'
+export * from './multi'

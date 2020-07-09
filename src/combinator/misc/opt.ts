@@ -2,17 +2,9 @@ import {Err, None, Ok, Option, Some} from '@emirayka/option-result'
 
 import {isIncomplete, Parser, ParserError, ParserResult} from '@/types'
 
-type Opt = <I,
-  O,
-  >(
-  parser: Parser<I, O>,
-) => Parser<I, Option<O>>
+type Opt = <I, O>(parser: Parser<I, O>) => Parser<I, Option<O>>
 
-export const opt: Opt = <I,
-  O,
-  >(
-  parser: Parser<I, O>,
-) => {
+export const opt: Opt = <I, O>(parser: Parser<I, O>) => {
   return (input: I) => {
     const result: ParserResult<I, O> = parser(input)
 
