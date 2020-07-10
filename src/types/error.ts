@@ -50,6 +50,10 @@ export class ParserErrorMapOpt {
   public readonly kind: 'map-opt' = 'map-opt'
 }
 
+export class ParserErrorNot {
+  public readonly kind: 'not' = 'not'
+}
+
 export class ParserErrorTake {
   public readonly kind: 'take' = 'take'
 }
@@ -150,6 +154,7 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorSeparatedPair |
   ParserErrorMap |
   ParserErrorMapOpt |
+  ParserErrorNot |
   ParserErrorTake |
   ParserErrorTakeTill |
   ParserErrorTakeTill1 |

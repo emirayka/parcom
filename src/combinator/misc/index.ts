@@ -1,4 +1,6 @@
 export * from './complete'
 export * from './map'
 export * from './opt'
+export * from './map-opt'
 export * from './peek'
+export * from './not'
