@@ -1,17 +1,17 @@
 import {Parser, ParserErrorFailure, ParserErrorIncomplete, ParserErrorTag} from '@/types'
 import {tag} from '@/parser/string/streaming'
 
-import {terminated} from './terminated'
+import {preceded} from './preceded'
 import {Err, Ok} from '@emirayka/option-result'
 
-describe('terminated', () => {
+describe('pair', () => {
   const tagABC: Parser<string, string> = tag('abc')
   const tagDEF: Parser<string, string> = tag('def')
-  const parser: Parser<string, string> = terminated(tagABC, tagDEF)
+  const parser: Parser<string, string> = preceded(tagABC, tagDEF)
 
   const failedParser: Parser<string, string> = (input: string) => Err([input, new ParserErrorFailure(`${input}${input}`)])
-  const parserWithFailedFirstPart: Parser<string, string> = terminated(failedParser, tagDEF)
-  const parserWithFailedSecondPart: Parser<string, string> = terminated(tagABC, failedParser)
+  const parserWithFailedFirstPart: Parser<string, string> = preceded(failedParser, tagDEF)
+  const parserWithFailedSecondPart: Parser<string, string> = preceded(tagABC, failedParser)
 
   test('if first parser returns error then constructed parser returns error ', () => {
     expect(parser('bcdef.')).toEqual(Err(['bcdef.', new ParserErrorTag()]))
@@ -22,7 +22,7 @@ describe('terminated', () => {
   })
 
   test('if both parsers return ok then constructed parser returns ok ', () => {
-    expect(parser('abcdef.')).toEqual(Ok(['.', 'abc']))
+    expect(parser('abcdef.')).toEqual(Ok(['.', 'def']))
   })
 
   test('forwards Incomplete', () => {
