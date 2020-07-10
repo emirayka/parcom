@@ -110,6 +110,18 @@ export class ParserErrorMany1Count {
   public readonly kind: 'many1-count' = 'many1-count'
 }
 
+export class ParserErrorFoldMany0 {
+  public readonly kind: 'fold-many0' = 'fold-many0'
+}
+
+export class ParserErrorFoldMany1 {
+  public readonly kind: 'fold-many1' = 'fold-many1'
+}
+
+export class ParserErrorFoldManyMN {
+  public readonly kind: 'fold-many-m-n' = 'fold-many-m-n'
+}
+
 export class ParserErrorCount {
   public readonly kind: 'count' = 'count'
 }
@@ -153,6 +165,9 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorManyMN |
   ParserErrorMany0Count |
   ParserErrorMany1Count |
+  ParserErrorFoldMany0 |
+  ParserErrorFoldMany1 |
+  ParserErrorFoldManyMN |
   ParserErrorCount |
   ParserErrorSeparatedList |
   ParserErrorSeparatedNonemptyList |

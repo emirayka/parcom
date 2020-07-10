@@ -6,7 +6,7 @@ type ManyMN = <I, O>(parser: Parser<I, O>, m: number, n: number) => Parser<I, Ar
 export const manyMN: ManyMN = <I, O>(parser: Parser<I, O>, m: number, n: number) => {
   if (m < 0 || n < 0 || m > n) {
     throw new Error(`
-Invalid usage of manyMN(a, b).
+Invalid usage of manyMN(parser, a, b).
 Numbers a and b must be non negative numbers where a <= b.
 Got takeTillMN(${m}, ${n}).
     `)

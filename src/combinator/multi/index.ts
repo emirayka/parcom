@@ -1,3 +1,6 @@
+export * from './fold-many0'
+export * from './fold-many1'
+export * from './fold-many-m-n'
 export * from './many0'
 export * from './many0-count'
 export * from './many1'
