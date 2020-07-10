@@ -13,10 +13,10 @@ export const takeTill1: TakeTill1 = (predicate) => (input) => {
     i += 1
   }
 
-  if (i == 0) {
-    return Err([input, new ParserErrorTakeTill1()])
-  } else if (i == input.length) {
+  if (i == input.length) {
     return Err([input, new ParserErrorIncomplete(1)])
+  } else if (i == 0) {
+    return Err([input, new ParserErrorTakeTill1()])
   } else {
     return Ok([input.substr(i), input.substr(0, i)])
   }

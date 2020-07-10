@@ -146,6 +146,70 @@ export class ParserErrorStab {
   public readonly kind: 'stab' = 'stab'
 }
 
+export class ParserErrorAlpha0 {
+  public readonly kind: 'alpha0' = 'alpha0'
+}
+
+export class ParserErrorAlpha1 {
+  public readonly kind: 'alpha1' = 'alpha1'
+}
+
+export class ParserErrorAlphanumeric0 {
+  public readonly kind: 'alphanumeric0' = 'alphanumeric0'
+}
+
+export class ParserErrorAlphanumeric1 {
+  public readonly kind: 'alphanumeric1' = 'alphanumeric1'
+}
+
+export class ParserErrorBinaryDigit0 {
+  public readonly kind: 'binary-digit0' = 'binary-digit0'
+}
+
+export class ParserErrorBinaryDigit1 {
+  public readonly kind: 'binary-digit1' = 'binary-digit1'
+}
+
+export class ParserErrorDigit0 {
+  public readonly kind: 'digit0' = 'digit0'
+}
+
+export class ParserErrorDigit1 {
+  public readonly kind: 'digit1' = 'digit1'
+}
+
+export class ParserErrorHexDigit0 {
+  public readonly kind: 'hex-digit0' = 'hex-digit0'
+}
+
+export class ParserErrorHexDigit1 {
+  public readonly kind: 'hex-digit1' = 'hex-digit1'
+}
+
+export class ParserErrorMultispace0 {
+  public readonly kind: 'multispace0' = 'multispace0'
+}
+
+export class ParserErrorMultispace1 {
+  public readonly kind: 'multispace1' = 'multispace1'
+}
+
+export class ParserErrorOctDigit0 {
+  public readonly kind: 'oct-digit0' = 'oct-digit0'
+}
+
+export class ParserErrorOctDigit1 {
+  public readonly kind: 'oct-digit1' = 'oct-digit1'
+}
+
+export class ParserErrorSpace0 {
+  public readonly kind: 'space0' = 'space0'
+}
+
+export class ParserErrorSpace1 {
+  public readonly kind: 'space1' = 'space1'
+}
+
 export type ParserError = ParserErrorIncomplete |
   ParserErrorFailure |
   ParserErrorTag |
@@ -177,6 +241,22 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorSeparatedList |
   ParserErrorSeparatedNonemptyList |
   ParserErrorTerminated |
+  ParserErrorAlpha0 |
+  ParserErrorAlpha1 |
+  ParserErrorAlphanumeric0 |
+  ParserErrorAlphanumeric1 |
+  ParserErrorBinaryDigit0 |
+  ParserErrorBinaryDigit1 |
+  ParserErrorDigit0 |
+  ParserErrorDigit1 |
+  ParserErrorHexDigit0 |
+  ParserErrorHexDigit1 |
+  ParserErrorMultispace0 |
+  ParserErrorMultispace1 |
+  ParserErrorOctDigit0 |
+  ParserErrorOctDigit1 |
+  ParserErrorSpace0 |
+  ParserErrorSpace1 |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {

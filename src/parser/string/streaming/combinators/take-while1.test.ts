@@ -24,8 +24,8 @@ describe('streaming', () => {
         expect(whileNotColon('sword123')).toEqual(Err(['sword123', new ParserErrorIncomplete(1)]))
       })
 
-      test('when input string is empty returns Err', () => {
-        expect(whileNotColon('')).toEqual(Err(['', new ParserErrorTakeWhile1()]))
+      test('when input string is empty returns Incomplete', () => {
+        expect(whileNotColon('')).toEqual(Err(['', new ParserErrorIncomplete(1)]))
       })
     })
   })

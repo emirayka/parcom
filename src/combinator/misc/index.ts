@@ -1,5 +1,6 @@
 export * from './complete'
 export * from './map'
+export * from './map-err'
 export * from './opt'
 export * from './map-opt'
 export * from './peek'

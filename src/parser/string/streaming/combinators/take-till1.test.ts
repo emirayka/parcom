@@ -25,7 +25,7 @@ describe('streaming', () => {
       })
 
       test('when input string is empty returns Err', () => {
-        expect(tillColon('')).toEqual(Err(['', new ParserErrorTakeTill1()]))
+        expect(tillColon('')).toEqual(Err(['', new ParserErrorIncomplete(1)]))
       })
     })
   })

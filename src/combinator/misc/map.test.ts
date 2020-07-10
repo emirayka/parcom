@@ -9,12 +9,12 @@ describe('map', () => {
     const len = (value: string): number => value.length
     const parser: Parser<string, number> = map(len, tagABC)
 
-    test('returns error if provided parser returned Err', () => {
-      expect(parser('abd')).toEqual(Err(['abd', new ParserErrorMap()]))
-    })
-
     test('returns mapped value if provided parser returned Ok', () => {
       expect(parser('abc')).toEqual(Ok(['', 3]))
+    })
+
+    test('returns error if provided parser returned Err', () => {
+      expect(parser('abd')).toEqual(Err(['abd', new ParserErrorMap()]))
     })
   })
 })
