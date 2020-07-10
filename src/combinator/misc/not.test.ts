@@ -9,11 +9,11 @@ describe('not', () => {
   const parser: Parser<string, null> = not(tagHello)
 
   describe('returns parser that', () => {
-    test('returns Ok(Some) when provided parser returned Ok', () => {
+    test('returns Err when provided parser returned Ok', () => {
       expect(parser('hello')).toEqual(Err(['hello', new ParserErrorNot()]))
     })
 
-    test('returns Ok(None) when provided parser returned Err', () => {
+    test('returns Ok when provided parser returned Err', () => {
       expect(parser('helld')).toEqual(Ok(['helld', null]))
     })
   })
