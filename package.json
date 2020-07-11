@@ -1,27 +1,26 @@
 {
-  "name": "@emirayka/parser-combinator",
+  "name": "@emirayka/parcom",
   "version": "0.0.1",
-  "description": "Typescript + rollup + babel boilerplate",
+  "description": "Parser combinator",
   "keywords": [
-    "boilerplate",
     "library",
-    "rollup",
-    "typescript"
+    "typescript",
+    "parser combinator"
   ],
-  "homepage": "https://github.com/emirayka/parser-combinator",
+  "homepage": "https://github.com/emirayka/parcom",
   "bugs": {
-    "url": "https://github.com/emirayka/parser-combinator/issues"
+    "url": "https://github.com/emirayka/parcom/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emirayka/parser-combinator.git"
+    "url": "git+https://github.com/emirayka/parcom.git"
   },
   "license": "MIT",
   "author": "emirayka emirayka@protonmail.com",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
-  "types": "dist/types/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "dist"
   ],
