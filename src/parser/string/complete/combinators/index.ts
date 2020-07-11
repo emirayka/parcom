@@ -1,3 +1,4 @@
+export * from './char'
 export * from './tag'
 export * from './take'
 export * from './take-till'

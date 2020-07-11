@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {octDigit1} from './oct-digit1'
 import {ParserErrorIncomplete} from '@/types'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('octDigit1', () => {
     test('matches octal digits', () => {
       expect(octDigit1('01234567 ')).toEqual(Ok([' ', '01234567']))

@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {multispace0} from './multispace0'
 import {ParserErrorIncomplete} from '@/types'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('multispace0', () => {
     test('matches space symbols', () => {
       expect(multispace0(' \t\r\n$')).toEqual(Ok(['$', ' \t\r\n']))

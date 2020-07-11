@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {alpha0} from './alpha0'
 import {ParserErrorIncomplete} from '@/types'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('alpha0', () => {
     test('matches alphabetic characters', () => {
       expect(alpha0('abcdefghijklmnopqrstuvwxyz ')).toEqual(Ok([' ', 'abcdefghijklmnopqrstuvwxyz']))

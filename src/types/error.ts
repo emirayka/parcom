@@ -210,6 +210,34 @@ export class ParserErrorSpace1 {
   public readonly kind: 'space1' = 'space1'
 }
 
+export class ParserErrorAnychar {
+  public readonly kind: 'anychar' = 'anychar'
+}
+
+export class ParserErrorChar {
+  public readonly kind: 'char' = 'char'
+}
+
+export class ParserErrorCrlf {
+  public readonly kind: 'crlf' = 'crlf'
+}
+
+export class ParserErrorLineEnding {
+  public readonly kind: 'line-ending' = 'line-ending'
+}
+
+export class ParserErrorNewline {
+  public readonly kind: 'newline' = 'newline'
+}
+
+export class ParserErrorNotLineEnding {
+  public readonly kind: 'not-line-ending' = 'not-line-ending'
+}
+
+export class ParserErrorTab {
+  public readonly kind: 'tab' = 'tab'
+}
+
 export type ParserError = ParserErrorIncomplete |
   ParserErrorFailure |
   ParserErrorTag |
@@ -257,6 +285,13 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorOctDigit1 |
   ParserErrorSpace0 |
   ParserErrorSpace1 |
+  ParserErrorAnychar |
+  ParserErrorChar |
+  ParserErrorCrlf |
+  ParserErrorLineEnding |
+  ParserErrorNewline |
+  ParserErrorNotLineEnding |
+  ParserErrorTab |
   ParserErrorStab
 
 export const isIncomplete = (error: ParserError): error is ParserErrorIncomplete => {

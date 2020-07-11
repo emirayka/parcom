@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {binaryDigit0} from './binary-digit0'
 import {ParserErrorIncomplete} from '@/types'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('binaryDigit0', () => {
     test('matches binary digits', () => {
       expect(binaryDigit0('01 ')).toEqual(Ok([' ', '01']))

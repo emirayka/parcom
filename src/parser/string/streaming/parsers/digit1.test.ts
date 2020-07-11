@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {ParserErrorIncomplete} from '@/types'
 import {digit1} from './digit1'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('digit1', () => {
     test('matches digits', () => {
       expect(digit1('0123456789 ')).toEqual(Ok([' ', '0123456789']))

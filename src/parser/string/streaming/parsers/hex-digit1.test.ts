@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {ParserErrorIncomplete} from '@/types'
 import {hexDigit1} from './hex-digit1'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('hexDigit1', () => {
     test('matches hex digits', () => {
       expect(hexDigit1('0123456789abcdefABCDEF ')).toEqual(Ok([' ', '0123456789abcdefABCDEF']))

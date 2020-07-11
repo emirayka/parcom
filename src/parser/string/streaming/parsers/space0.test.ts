@@ -3,7 +3,7 @@ import {Err, Ok} from '@emirayka/option-result'
 import {space0} from './space0'
 import {ParserErrorIncomplete} from '@/types'
 
-describe('complete', () => {
+describe('streaming', () => {
   describe('space0', () => {
     test('matches spaces', () => {
       expect(space0('   $')).toEqual(Ok(['$', '   ']))
