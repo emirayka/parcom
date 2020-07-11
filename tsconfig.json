@@ -28,7 +28,7 @@
 
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "types"
+    "declarationDir": "dist/types"
   },
   "files": [
     "src/index.ts"
