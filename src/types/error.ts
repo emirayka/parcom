@@ -218,6 +218,14 @@ export class ParserErrorChar {
   public readonly kind: 'char' = 'char'
 }
 
+export class ParserErrorOneOf {
+  public readonly kind: 'one-of' = 'one-of'
+}
+
+export class ParserErrorNoneOf {
+  public readonly kind: 'none-of' = 'none-of'
+}
+
 export class ParserErrorCrlf {
   public readonly kind: 'crlf' = 'crlf'
 }
@@ -287,6 +295,8 @@ export type ParserError = ParserErrorIncomplete |
   ParserErrorSpace1 |
   ParserErrorAnychar |
   ParserErrorChar |
+  ParserErrorOneOf |
+  ParserErrorNoneOf |
   ParserErrorCrlf |
   ParserErrorLineEnding |
   ParserErrorNewline |
