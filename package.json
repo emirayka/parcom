@@ -1,6 +1,6 @@
 {
   "name": "@emirayka/parcom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Parser combinator",
   "keywords": [
     "library",
