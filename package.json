@@ -1,6 +1,6 @@
 {
   "name": "@emirayka/parcom",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Parser combinator",
   "keywords": [
     "library",
@@ -22,7 +22,8 @@
   "browser": "dist/index.umd.js",
   "types": "types/index.cjs.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
     "prebuild": "npm run test && npm run clean",
