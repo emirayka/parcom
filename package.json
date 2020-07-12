@@ -1,6 +1,6 @@
 {
   "name": "@emirayka/parcom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Parser combinator",
   "keywords": [
     "library",
@@ -20,7 +20,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
-  "types": "dist/index.cjs.d.ts",
+  "types": "types/index.cjs.d.ts",
   "files": [
     "dist"
   ],
